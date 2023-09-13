@@ -78,12 +78,12 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget _icon() {
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
-        shape: BoxShape.circle,
-      ),
+      // decoration: BoxDecoration(
+      //   border: Border.all(color: Colors.white, width: 2),
+      //   shape: BoxShape.circle,
+      // ),
       child: const Icon(
-        Icons.person,
+        Icons.person_add,
         color: Colors.white,
         size: 120,
       ),
@@ -94,7 +94,7 @@ class _SignUpPageState extends State<SignUpPage> {
       {isPassword = false}) {
     var border = OutlineInputBorder(
         borderRadius: BorderRadius.circular(18),
-        borderSide: const BorderSide(color: Colors.white));
+        borderSide: const BorderSide(color: Colors.black));
 
     return TextField(
       style: const TextStyle(color: Colors.white),

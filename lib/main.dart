@@ -64,8 +64,8 @@ class _LoginPageState extends State<LoginPage> {
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
-            Colors.blue,
-            Colors.red,
+            Colors.lightBlueAccent,
+            Colors.lightBlueAccent,
           ],
         ),
       ),
@@ -88,11 +88,11 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 50,
             ),
-            _inputFields("Username", usernamecontroller),
+            _inputFields("EMAIL", usernamecontroller),
             const SizedBox(
               height: 40,
             ),
-            _inputFields("Password", passwordcontroller, isPassword: true),
+            _inputFields("PASSWORD", passwordcontroller, isPassword: true),
             const SizedBox(
               height: 40,
             ),
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _icon() {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 2),
+        border: Border.all(color: Colors.black, width: 2),
         shape: BoxShape.circle,
       ),
       child: const Icon(
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
       {isPassword = false}) {
     var border = OutlineInputBorder(
         borderRadius: BorderRadius.circular(18),
-        borderSide: const BorderSide(color: Colors.white));
+        borderSide: const BorderSide(color: Colors.black));
 
     return TextField(
       style: const TextStyle(color: Colors.white),
