@@ -124,12 +124,12 @@ class _SignUpPageState extends State<SignUpPage> {
         });
 
         // Store data to Cloud Firestore
-        CollectionReference collectionReference = FirebaseFirestore.instance.collection('User-Info');
+        CollectionReference collectionReference = FirebaseFirestore.instance.collection('user-data');
         collectionReference.add({
           'username': usernamecontroller.text,
           'email': emailidcontroller.text,
           'contact_no': contactnocontroller.text,
-          'password': passwordcontroller.text
+          'password': passwordcontroller.text,
         });
       },
 

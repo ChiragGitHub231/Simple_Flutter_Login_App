@@ -4,17 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:login_signup/home.dart';
 import 'package:login_signup/signup.dart';
 
-void main() async{
+void main() async {
   // Initialize Firebase
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -28,7 +26,6 @@ class _MyAppState extends State<MyApp> {
       home: const Scaffold(
         body: LoginPage(),
       ),
-
       routes: {
         'Home': (context) => const HomePage(),
       },
@@ -38,7 +35,6 @@ class _MyAppState extends State<MyApp> {
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -47,13 +43,10 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController usernamecontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
 
-  void NavigateToHome(context){
-    Navigator.of(context).pushNamed(
-        'Home',
-        arguments: {
-          'username': usernamecontroller.text,
-        }
-    );
+  void NavigateToHome(context) {
+    Navigator.of(context).pushNamed('Home', arguments: {
+      'username': usernamecontroller.text,
+    });
   }
 
   @override
@@ -143,18 +136,18 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginBtn() {
     return ElevatedButton(
       onPressed: () {
-        FirebaseAuth.instance.signInWithEmailAndPassword(
-            email: usernamecontroller.text,
-            password: passwordcontroller.text
-        ).then((value){
+        FirebaseAuth.instance
+            .signInWithEmailAndPassword(
+                email: usernamecontroller.text,
+                password: passwordcontroller.text)
+            .then((value) {
           print('Logged In Successfully');
           //Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
           NavigateToHome(context);
-        }).onError((error, stackTrace){
+        }).onError((error, stackTrace) {
           print('Error: ${error.toString()}');
         });
       },
-
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
         backgroundColor: const Color.fromARGB(255, 228, 226, 226),
