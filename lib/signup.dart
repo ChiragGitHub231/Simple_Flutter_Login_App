@@ -34,7 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
         body: _page(),
       ),
     );
-  }
+}
 
   Widget _page() {
     return Padding(

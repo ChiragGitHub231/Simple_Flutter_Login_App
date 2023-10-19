@@ -1,8 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:login_signup/CartPage.dart';
+import 'package:login_signup/ItemPage.dart';
 import 'package:login_signup/home.dart';
 import 'package:login_signup/signup.dart';
+
+// firebase login id -->   fir-login-f2d87
 
 void main() async {
   // Initialize Firebase
@@ -29,6 +33,9 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         'Home': (context) => const HomePage(),
+        "cartPage": (context) => CartPage(),
+        "itemPage": (context) => ItemPage(),
+        "homePage":(context)=>HomePage(),
       },
     );
   }
